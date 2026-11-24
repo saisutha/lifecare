@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LifeCare Multispeciality Hospital — Providing Quality Healthcare with Compassion and Excellence across Cardiology, Neurology, Orthopedics, Pediatrics, Dermatology, Dentistry, Gynecology, and General Medicine. Pure HTML5 and CSS3 demonstration website.">
+  <meta name="theme-color" content="#083d6c">
+  <title>LIFECARE Multispeciality Hospital | Your Health, Our Priority</title>
+
+  <!-- Typography: Sora for refined clinical headings, Inter for readable body copy -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Sora:wght@500;600;700&amp;display=swap" rel="stylesheet">
+
+  <!-- External Stylesheet (HTML and CSS kept completely separate) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Skip Navigation Link for Keyboard Accessibility -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- =========================================================================
+       REUSABLE INLINE SVG ICON SPRITE (No external script or icon font needed)
+       ========================================================================= -->
+  <svg class="svg-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M6.5 3h2.7l1.3 4-2 1.3a13 13 0 0 0 6.2 6.2l1.3-2 4 1.3v2.7a3 3 0 0 1-3 3A17 17 0 0 1 3.5 6a3 3 0 0 1 3-3Z"/></symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18M8 14h2M14 14h2M8 18h2"/></symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.3-7-9a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 4.7-7 9-7 9Z"/><path d="M8 11h2l1-2 2 4 1-2h2"/></symbol>
+    <symbol id="icon-brain" viewBox="0 0 24 24"><path d="M12 4a3 3 0 0 0-3 3 3 3 0 0 0-1 5.8V16a3 3 0 0 0 3 3h1V4ZM12 4a3 3 0 0 1 3 3 3 3 0 0 1 1 5.8V16a3 3 0 0 1-3 3h-1V4Z"/><path d="M9 8h3M12 12H9M15 8h-3M12 16h3"/></symbol>
+    <symbol id="icon-bone" viewBox="0 0 24 24"><path d="M8.5 3.5a2.5 2.5 0 0 1 0 5L19 19a2.5 2.5 0 1 1-2.5 2.5L6 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 2.5-2.5Z"/></symbol>
+    <symbol id="icon-child" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.5"/><path d="M5 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2M9.5 7h.01M14.5 7h.01M10 9.2c1.2 1 2.8 1 4 0"/></symbol>
+    <symbol id="icon-skin" viewBox="0 0 24 24"><path d="M12 3s6 6 6 10a6 6 0 0 1-12 0c0-4 6-10 6-10Z"/><path d="M9 14a3 3 0 0 0 3 3"/></symbol>
+    <symbol id="icon-tooth" viewBox="0 0 24 24"><path d="M12 4c-2 0-2 1-4 1S5 4 4.5 6.5c-.6 3 1.5 4 2 7 .3 2 .5 5 2 5s1.5-4 3.5-4 1.5 4 3.5 4 1.7-3 2-5c.5-3 2.6-4 2-7C19 4 16 5 14 5s-2-1-2-1Z"/></symbol>
+    <symbol id="icon-women" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M12 13v8M9 18h6"/></symbol>
+    <symbol id="icon-stethoscope" viewBox="0 0 24 24"><path d="M5 3v5a5 5 0 0 0 10 0V3"/><path d="M10 13v3a4 4 0 0 0 8 0v-2"/><circle cx="18" cy="10" r="2"/><path d="M3 3h4M13 3h4"/></symbol>
+    <symbol id="icon-ambulance" viewBox="0 0 24 24"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/><path d="M8 9v4M6 11h4M17 11h2"/></symbol>
+    <symbol id="icon-lab" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-6 9a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-6-9V3M6.5 15h11"/></symbol>
+    <symbol id="icon-scan" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="4"/><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="icon-pharmacy" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8v8M8 12h8"/></symbol>
+    <symbol id="icon-surgery" viewBox="0 0 24 24"><path d="M4 20 15.5 8.5l2 2L6 22H4v-2ZM14 6l4-3 3 3-3 4"/></symbol>
+    <symbol id="icon-icu" viewBox="0 0 24 24"><path d="M3 20v-9h13a5 5 0 0 1 5 5v4M3 16h18M3 11V5"/><circle cx="7" cy="8" r="2"/></symbol>
+    <symbol id="icon-package" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 11l2 2 4-4M9 17h6"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="icon-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M8.5 12 7 21l5-3 5 3-1.5-9"/></symbol>
+    <symbol id="icon-hospital" viewBox="0 0 24 24"><path d="M4 21V7l8-4 8 4v14M2 21h20M12 8v6M9 11h6M8 21v-4h8v4"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+    <symbol id="icon-alert" viewBox="0 0 24 24"><path d="M6 18v-5a6 6 0 0 1 12 0v5M4 18h16M12 3v2M5 6l1.5 1.5M19 6l-1.5 1.5M2 21h20"/><path d="M12 12v2"/></symbol>
+    <symbol id="icon-bus" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="13" rx="2"/><path d="M4 10h16M8 20v-3M16 20v-3M7 14h.01M17 14h.01"/></symbol>
+    <symbol id="icon-parking" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 17V7h3a3 3 0 0 1 0 6H9"/></symbol>
+  </svg>
+
+  <!-- =========================================================================
+       TOP UTILITY BAR (Emergency Quick Contact & Working Hours)
+       ========================================================================= -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-group">
+        <a class="topbar-emergency" href="tel:108">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span>24/7 Emergency (India): <strong>108</strong></span>
+        </a>
+        <span class="topbar-item topbar-demo">
+          <svg class="icon icon-xs" aria-hidden="true" focusable="false"><use href="#icon-phone"></use></svg>
+          Hospital Helpline: 1800-123-4567 <em class="demo-chip">Demo</em>
+        </span>
+      </div>
+      <div class="topbar-group topbar-right">
+        <span class="topbar-item">
+          <svg class="icon icon-xs" aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>
+          OPD: Mon&ndash;Sat, 8:00 AM &ndash; 8:00 PM
+        </span>
+        <span class="topbar-item topbar-location">
+          <svg class="icon icon-xs" aria-hidden="true" focusable="false"><use href="#icon-pin"></use></svg>
+          Dwarka, New Delhi
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       HEADER & PRIMARY NAVIGATION BAR
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Hospital Brand Logo -->
+      <a class="brand" href="#home" aria-label="LifeCare Multispeciality Hospital Home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" focusable="false">
+            <rect x="2" y="2" width="44" height="44" rx="13" fill="currentColor"></rect>
+            <path d="M24 12v24M12 24h24" stroke="#ffffff" stroke-width="5.5" stroke-linecap="round"></path>
+            <path d="M9 31h6l3-6 4 11 4-8 3 3h10" fill="none" stroke="#b6f2d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">LIFECARE</span>
+          <span class="brand-sub">Multispeciality Hospital</span>
+        </span>
+      </a>
+
+      <!-- Pure CSS Mobile Menu Toggle (No JavaScript needed) -->
+      <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Toggle navigation menu">
+      <label class="nav-toggle-label" for="nav-toggle">
+        <span class="sr-only">Toggle navigation menu</span>
+        <span class="nav-bar"></span>
+        <span class="nav-bar"></span>
+        <span class="nav-bar"></span>
+      </label>
+
+      <!-- Anchor Navigation Links -->
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#departments">Departments</a></li>
+          <li><a href="#doctors">Doctors</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#health-tips">Health Tips</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="nav-cta">
+            <a class="btn btn-primary btn-sm" href="#appointment">Book Appointment</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- =======================================================================
+         HERO SECTION (Full-Width Photo, Blue Overlay, Heading, CTAs, Emergency)
+         ======================================================================= -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+        <!-- Main Hero Message -->
+        <div class="hero-content">
+          <p class="hero-pill">
+            <span class="pill-dot" aria-hidden="true"></span>
+            Multispeciality Hospital &middot; 24/7 Patient Care
+          </p>
+          <h1 id="hero-heading">Your Health, <span>Our Priority</span></h1>
+          <p class="hero-tagline">Providing Quality Healthcare with Compassion and Excellence.</p>
+          <p class="hero-desc">
+            Bringing together experienced specialists, advanced medical diagnostics, and
+            calm patient-first care across eight clinical departments under one roof.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-green" href="#appointment">
+              Book an Appointment
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+            </a>
+            <a class="btn btn-outline-light" href="#departments">Explore Departments</a>
+          </div>
+          <ul class="hero-highlights" aria-label="Key hospital highlights">
+            <li><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="#icon-shield"></use></svg>40+ Specialist Doctors</li>
+            <li><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="#icon-icu"></use></svg>200 Inpatient Beds</li>
+            <li><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>24/7 Emergency Support</li>
+          </ul>
+        </div>
+
+        <!-- Emergency Quick Card inside Hero -->
+        <aside class="hero-card" aria-label="Emergency contact card">
+          <div class="hero-card-head">
+            <span class="hero-card-icon" aria-hidden="true">
+              <svg class="icon" focusable="false"><use href="#icon-alert"></use></svg>
+            </span>
+            <div>
+              <p class="hero-card-kicker">Emergency Desk</p>
+              <p class="hero-card-status">
+                <span class="pulse-dot" aria-hidden="true"></span>Active 24 Hours
+              </p>
+            </div>
+          </div>
+          <p class="hero-card-copy">Need urgent ambulance or trauma care right now?</p>
+          <a class="hero-helpline" href="tel:108">
+            <span class="hero-helpline-icon" aria-hidden="true">
+              <svg class="icon" focusable="false"><use href="#icon-phone"></use></svg>
+            </span>
+            <span>
+              <small>India Emergency Helpline</small>
+              <strong>108</strong>
+            </span>
+          </a>
+          <div class="hero-card-divider"></div>
+          <p class="hero-card-demo">
+            Hospital Desk: <strong>1800-123-4567</strong>
+            <span class="demo-badge-light">Demo</span>
+          </p>
+          <a class="hero-card-link" href="#emergency">
+            Emergency information <span aria-hidden="true">&rarr;</span>
+          </a>
+        </aside>
+      </div>
+
+      <!-- Key Hospital Numbers Bar -->
+      <div class="container">
+        <ul class="hero-stats" aria-label="Hospital key figures">
+          <li><strong>25+</strong><span>Years of Trusted Care</span></li>
+          <li><strong>8</strong><span>Speciality Departments</span></li>
+          <li><strong>200</strong><span>Modern Hospital Beds</span></li>
+          <li><strong>50,000+</strong><span>Patients Treated Safely</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         ABOUT OUR HOSPITAL SECTION (Introduction, Image, Mission & Vision)
+         ======================================================================= -->
+    <section class="section about-section" id="about" aria-labelledby="about-heading">
+      <div class="container about-grid">
+        <!-- Left Column: Overlapping Hospital Photographs -->
+        <div class="about-media">
+          <figure class="about-photo-main">
+            <img src="https://images.pexels.com/photos/6129141/pexels-photo-6129141.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+                 alt="Nurse assisting a patient in a bright, modern LifeCare hospital corridor"
+                 width="1200" height="627" loading="lazy">
+          </figure>
+          <figure class="about-photo-inset">
+            <img src="https://images.pexels.com/photos/7089017/pexels-photo-7089017.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+                 alt="Advanced modern MRI diagnostic suite inside the hospital"
+                 width="1200" height="627" loading="lazy">
+          </figure>
+          <div class="about-badge">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-award"></use></svg>
+            <div>
+              <strong>25+ Years</strong>
+              <span>Serving Our Community</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Story, Mission, Vision & Core Promises -->
+        <div class="about-content">
+          <p class="eyebrow">About Our Hospital</p>
+          <h2 id="about-heading">Modern Healthcare Guided by <em>Warm Compassion</em></h2>
+          <p class="about-lead">
+            LifeCare Multispeciality Hospital is a full-service medical center built on a
+            clear purpose: deliver accurate, trustworthy medicine while treating every
+            patient with kindness and respect.
+          </p>
+          <p class="about-text">
+            Our dedicated doctors, nurses, and technicians collaborate across eight
+            integrated departments. Supported by contemporary laboratory facilities,
+            advanced imaging suites, clean recovery wards, and round-the-clock care teams,
+            we stand beside families from routine wellness checks to complex surgical care.
+          </p>
+
+          <!-- Mission & Vision Cards -->
+          <div class="mission-grid">
+            <article class="mission-card">
+              <span class="mission-icon" aria-hidden="true">
+                <svg class="icon" focusable="false"><use href="#icon-heart"></use></svg>
+              </span>
+              <div>
+                <h3>Our Mission</h3>
+                <p>To deliver ethical, affordable, evidence-based healthcare tailored to each patient&rsquo;s comfort and recovery.</p>
+              </div>
+            </article>
+            <article class="mission-card">
+              <span class="mission-icon mission-icon-green" aria-hidden="true">
+                <svg class="icon" focusable="false"><use href="#icon-shield"></use></svg>
+              </span>
+              <div>
+                <h3>Our Vision</h3>
+                <p>To remain a trusted symbol of medical excellence, modern safety standards, and compassionate community care.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Four Core Strengths -->
+          <ul class="about-checklist">
+            <li>
+              <span class="check-circle" aria-hidden="true"><svg class="icon icon-xs" focusable="false"><use href="#icon-check"></use></svg></span>
+              Experienced medical professionals
+            </li>
+            <li>
+              <span class="check-circle" aria-hidden="true"><svg class="icon icon-xs" focusable="false"><use href="#icon-check"></use></svg></span>
+              Modern medical equipment
+            </li>
+            <li>
+              <span class="check-circle" aria-hidden="true"><svg class="icon icon-xs" focusable="false"><use href="#icon-check"></use></svg></span>
+              Quality patient care
+            </li>
+            <li>
+              <span class="check-circle" aria-hidden="true"><svg class="icon icon-xs" focusable="false"><use href="#icon-check"></use></svg></span>
+              24/7 healthcare support
+            </li>
+          </ul>
+
+          <div class="about-actions">
+            <a class="btn btn-primary" href="#doctors">Meet Our Doctors</a>
+            <a class="text-link" href="#services">Explore medical services <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         MEDICAL DEPARTMENTS SECTION (8 Speciality Cards)
+         ======================================================================= -->
+    <section class="section departments-section" id="departments" aria-labelledby="departments-heading">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Medical Departments</p>
+            <h2 id="departments-heading">Specialized Care Across <em>Eight Disciplines</em></h2>
+          </div>
+          <div class="section-aside">
+            <p>
+              Every department works seamlessly together so patients move from accurate
+              evaluation to the right treatment without delay.
+            </p>
+            <a class="text-link" href="#appointment">Book a consultation <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+
+        <div class="departments-grid">
+          <!-- 1. Cardiology -->
+          <article class="dept-card">
+            <span class="dept-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-heart"></use></svg></span>
+            <h3>Cardiology</h3>
+            <p>Dedicated heart care and treatment including ECG, echocardiography, preventive screening, and cardiac care.</p>
+            <a class="dept-btn" href="#appointment">Learn More <span aria-hidden="true">&rarr;</span></a>
+          </article>
+
+          <!-- 2. Neurology -->
+          <article class="dept-card">
+            <span class="dept-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-brain"></use></svg></span>
+            <h3>Neurology</h3>
+            <p>Comprehensive brain and nervous system care for stroke support, migraines, epilepsy, and nerve disorders.</p>
+            <a class="dept-btn" href="#appointment">Learn More <span aria-hidden="true">&rarr;</span></a>
+          </article>
+
+          <!-- 3. Orthopedics -->
+          <article class="dept-card">
+            <span class="dept-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-bone"></use></svg></span>
+            <h3>Orthopedics</h3>
+            <p>Advanced bone and joint treatment covering fracture repair, arthritis support, sports injuries, and rehab.</p>
+            <a class="dept-btn" href="#appointment">Learn More <span aria-hidden="true">&rarr;</span></a>
+          </article>
+
+          <!-- 4. Pediatrics -->
+          <article class="dept-card">
+            <span class="dept-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-child"></use></svg></span>
+            <h3>Pediatrics</h3>
+            <p>Gentle, attentive healthcare for children including infant wellness checks, immunizations, and growth tracking.</p>
+            <a class="dept-btn" href="#appointment">Learn More <span aria-hidden="true">&rarr;</span></a>
+          </article>
+
+          <!-- 5. Dermatology -->
+          <article class="dept-card">
+            <span class="dept-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-skin"></use></svg></span>
+            <h3>Dermatology</h3>
+            <p>Thoughtful skin care and treatment for allergies, acne, eczema, hair concerns, and ongoing skin wellness.</p>
+            <a class="dept-btn" href="#appointment">Learn More <span aria-hidden="true">&rarr;</span></a>
+          </article>
+
+          <!-- 6. Dentistry -->
+          <article class="dept-card">
+            <span class="dept-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-tooth"></use></svg></span>
+            <h3>Dentistry</h3>
+            <p>Modern dental healthcare from routine checkups and gentle cleanings to painless fillings and restorations.</p>
+            <a class="dept-btn" href="#appointment">Learn More <span aria-hidden="true">&rarr;</span></a>
+          </article>
+
+          <!-- 7. Gynecology -->
+          <article class="dept-card">
+            <span class="dept-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-women"></use></svg></span>
+            <h3>Gynecology</h3>
+            <p>Supportive women&rsquo;s healthcare across every stage of life, from maternity counseling to annual screenings.</p>
+            <a class="dept-btn" href="#appointment">Learn More <span aria-hidden="true">&rarr;</span></a>
+          </article>
+
+          <!-- 8. General Medicine -->
+          <article class="dept-card">
+            <span class="dept-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-stethoscope"></use></svg></span>
+            <h3>General Medicine</h3>
+            <p>Trusted everyday health consultations covering seasonal illness, diabetes, blood pressure, and preventive health.</p>
+            <a class="dept-btn" href="#appointment">Learn More <span aria-hidden="true">&rarr;</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         DOCTOR PROFILES SECTION (4 Consistent Fictional Specialist Cards)
+         ======================================================================= -->
+    <section class="section doctors-section" id="doctors" aria-labelledby="doctors-heading">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Our Specialists</p>
+            <h2 id="doctors-heading">Experienced Doctors Who <em>Truly Listen</em></h2>
+          </div>
+          <div class="section-aside">
+            <p>
+              Our specialists pair strong clinical training with clear communication so
+              you feel informed and comfortable at every visit.
+            </p>
+            <p class="aside-note">All doctor profiles shown are fictional for academic demo purposes.</p>
+          </div>
+        </div>
+
+        <div class="doctors-grid">
+          <!-- Doctor 1 -->
+          <article class="doctor-card">
+            <div class="doctor-photo">
+              <img src="https://images.pexels.com/photos/19131221/pexels-photo-19131221.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800"
+                   alt="Fictional profile photo of Dr. Ananya Mehta, Senior Cardiologist"
+                   width="800" height="1200" loading="lazy">
+              <span class="exp-badge">15 Years Exp.</span>
+            </div>
+            <div class="doctor-body">
+              <p class="doctor-dept">Cardiology</p>
+              <h3>Dr. Ananya Mehta</h3>
+              <p class="doctor-qual">MBBS, MD, DM (Cardiology)</p>
+              <p class="doctor-hours">
+                <svg class="icon icon-xs" aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>
+                Mon&ndash;Fri &middot; 9:00 AM &ndash; 2:00 PM
+              </p>
+              <a class="btn btn-outline btn-sm btn-full" href="#appointment">Book Appointment</a>
+            </div>
+          </article>
+
+          <!-- Doctor 2 -->
+          <article class="doctor-card">
+            <div class="doctor-photo">
+              <img src="https://images.pexels.com/photos/38618419/pexels-photo-38618419.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800"
+                   alt="Fictional profile photo of Dr. Arjun Nair, Consultant Neurologist"
+                   width="800" height="1200" loading="lazy">
+              <span class="exp-badge">12 Years Exp.</span>
+            </div>
+            <div class="doctor-body">
+              <p class="doctor-dept">Neurology</p>
+              <h3>Dr. Arjun Nair</h3>
+              <p class="doctor-qual">MBBS, MD, DM (Neurology)</p>
+              <p class="doctor-hours">
+                <svg class="icon icon-xs" aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>
+                Mon&ndash;Sat &middot; 10:00 AM &ndash; 4:00 PM
+              </p>
+              <a class="btn btn-outline btn-sm btn-full" href="#appointment">Book Appointment</a>
+            </div>
+          </article>
+
+          <!-- Doctor 3 -->
+          <article class="doctor-card">
+            <div class="doctor-photo">
+              <img src="https://images.pexels.com/photos/6749778/pexels-photo-6749778.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800"
+                   alt="Fictional profile photo of Dr. Meera Iyer, Senior Pediatrician"
+                   width="800" height="1200" loading="lazy">
+              <span class="exp-badge">10 Years Exp.</span>
+            </div>
+            <div class="doctor-body">
+              <p class="doctor-dept">Pediatrics</p>
+              <h3>Dr. Meera Iyer</h3>
+              <p class="doctor-qual">MBBS, MD (Pediatrics)</p>
+              <p class="doctor-hours">
+                <svg class="icon icon-xs" aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>
+                Mon&ndash;Fri &middot; 11:00 AM &ndash; 5:00 PM
+              </p>
+              <a class="btn btn-outline btn-sm btn-full" href="#appointment">Book Appointment</a>
+            </div>
+          </article>
+
+          <!-- Doctor 4 -->
+          <article class="doctor-card">
+            <div class="doctor-photo">
+              <img src="https://images.pexels.com/photos/4989148/pexels-photo-4989148.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800"
+                   alt="Fictional profile photo of Dr. Daniel Mensah, Orthopedic Surgeon"
+                   width="800" height="1200" loading="lazy">
+              <span class="exp-badge">14 Years Exp.</span>
+            </div>
+            <div class="doctor-body">
+              <p class="doctor-dept">Orthopedics</p>
+              <h3>Dr. Daniel Mensah</h3>
+              <p class="doctor-qual">MBBS, MS (Orthopedics)</p>
+              <p class="doctor-hours">
+                <svg class="icon icon-xs" aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>
+                Tue&ndash;Sat &middot; 9:30 AM &ndash; 3:30 PM
+              </p>
+              <a class="btn btn-outline btn-sm btn-full" href="#appointment">Book Appointment</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         MEDICAL SERVICES SECTION (8 Comprehensive Hospital Services)
+         ======================================================================= -->
+    <section class="section services-section" id="services" aria-labelledby="services-heading">
+      <div class="container services-layout">
+        <!-- Left Introduction Panel -->
+        <div class="services-intro">
+          <p class="eyebrow eyebrow-light">Hospital Facilities &amp; Services</p>
+          <h2 id="services-heading">Complete Medical Support, <em>Under One Roof</em></h2>
+          <p class="services-copy">
+            From urgent critical care to routine diagnostic testing and preventive
+            packages, our facilities keep every step of treatment connected and smooth.
+          </p>
+          <ul class="services-points">
+            <li><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>Coordinated digital test reporting</li>
+            <li><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>Trained nursing support day &amp; night</li>
+            <li><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>Transparent, patient-friendly assistance</li>
+          </ul>
+          <a class="btn btn-light" href="#appointment">
+            Schedule a Visit
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+          </a>
+        </div>
+
+        <!-- Right Grid: 8 Required Medical Services -->
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-alert"></use></svg></span>
+            <div>
+              <h3>24/7 Emergency Care</h3>
+              <p>Round-the-clock trauma response, rapid triage, and dedicated on-call emergency doctors.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-lab"></use></svg></span>
+            <div>
+              <h3>Laboratory Testing</h3>
+              <p>Reliable in-house pathology, blood analysis, and sample collection with timely reporting.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-scan"></use></svg></span>
+            <div>
+              <h3>Advanced Diagnostics</h3>
+              <p>Digital X-ray, ultrasound, CT scan, ECG, and MRI facilities managed by senior radiologists.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-ambulance"></use></svg></span>
+            <div>
+              <h3>Ambulance Services</h3>
+              <p>Well-equipped emergency transport vehicles staffed by trained paramedics available 24/7.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-pharmacy"></use></svg></span>
+            <div>
+              <h3>Pharmacy</h3>
+              <p>A fully stocked 24-hour hospital pharmacy dispensing verified, doctor-prescribed medications.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-surgery"></use></svg></span>
+            <div>
+              <h3>Operation Theatre</h3>
+              <p>Modern modular surgical suites following strict hygiene, sterilization, and safety protocols.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-icu"></use></svg></span>
+            <div>
+              <h3>Intensive Care Unit (ICU)</h3>
+              <p>Continuous bedside monitoring, specialized ventilators, and attentive critical care staff.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-package"></use></svg></span>
+            <div>
+              <h3>Health Checkup Packages</h3>
+              <p>Preventive whole-body, cardiac, diabetic, and senior health screening plans for every age.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         APPOINTMENT BOOKING SECTION (Complete HTML5 Validated Demo Form)
+         ======================================================================= -->
+    <section class="section appointment-section" id="appointment" aria-labelledby="appointment-heading">
+      <div class="container appointment-grid">
+        <!-- Guidance Side -->
+        <div class="appointment-info">
+          <p class="eyebrow">Book Appointment</p>
+          <h2 id="appointment-heading">Plan Your Visit in <em>Three Easy Steps</em></h2>
+          <p class="appointment-lead">
+            Select your department, doctor, and preferred time slot using the request
+            form. In a connected hospital system, the care desk confirms availability
+            directly by phone or email.
+          </p>
+
+          <ol class="booking-steps">
+            <li>
+              <span class="step-num" aria-hidden="true">01</span>
+              <div>
+                <h3>Share Patient Details</h3>
+                <p>Enter your basic contact details and date of birth accurately.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num" aria-hidden="true">02</span>
+              <div>
+                <h3>Choose Department &amp; Doctor</h3>
+                <p>Pick a medical department and specialist suited to your health concern.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num" aria-hidden="true">03</span>
+              <div>
+                <h3>Visit With Prior Records</h3>
+                <p>Bring earlier prescriptions, diagnostic reports, and a photo ID on visit day.</p>
+              </div>
+            </li>
+          </ol>
+
+          <div class="appointment-meta">
+            <div>
+              <p class="meta-label">OPD Working Hours</p>
+              <p>Mon&ndash;Sat: 8:00 AM &ndash; 8:00 PM<br>Sunday: 9:00 AM &ndash; 2:00 PM</p>
+            </div>
+            <div>
+              <p class="meta-label">Appointment Desk (Demo)</p>
+              <a href="tel:+911145678900">+91 11 4567 8900</a>
+              <a href="mailto:appointments@lifecarehospital.example">appointments@lifecarehospital.example</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Appointment Form Card -->
+        <div class="appointment-card">
+          <div class="appointment-card-head">
+            <span class="card-head-icon" aria-hidden="true">
+              <svg class="icon" focusable="false"><use href="#icon-calendar"></use></svg>
+            </span>
+            <div>
+              <h3>Book an Appointment</h3>
+              <p>Fields marked <span class="req">*</span> are required.</p>
+            </div>
+            <span class="demo-pill">Demo Form</span>
+          </div>
+
+          <!-- Pure HTML5 form with native validation (no backend / no JS) -->
+          <form class="appointment-form" action="#appointment" method="get">
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="patient-name">Patient Full Name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="patient-name" name="patient-name" placeholder="e.g. Aarav Sharma" autocomplete="name" required>
+              </div>
+
+              <div class="form-field">
+                <label for="patient-email">Email Address <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="patient-email" name="patient-email" placeholder="you@example.com" autocomplete="email" required>
+              </div>
+
+              <div class="form-field">
+                <label for="patient-phone">Phone Number <span class="req" aria-hidden="true">*</span></label>
+                <input type="tel" id="patient-phone" name="patient-phone" placeholder="+91 98765 43210" pattern="[0-9+()\-\s]{7,18}" autocomplete="tel" required>
+              </div>
+
+              <div class="form-field">
+                <label for="patient-dob">Date of Birth <span class="req" aria-hidden="true">*</span></label>
+                <input type="date" id="patient-dob" name="patient-dob" autocomplete="bday" required>
+              </div>
+
+              <div class="form-field">
+                <label for="patient-gender">Gender <span class="req" aria-hidden="true">*</span></label>
+                <select id="patient-gender" name="patient-gender" required>
+                  <option value="">Select Gender</option>
+                  <option value="female">Female</option>
+                  <option value="male">Male</option>
+                  <option value="other">Other</option>
+                  <option value="prefer-not-to-say">Prefer not to say</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="select-department">Select Department <span class="req" aria-hidden="true">*</span></label>
+                <select id="select-department" name="department" required>
+                  <option value="">Choose Department</option>
+                  <option value="cardiology">Cardiology</option>
+                  <option value="neurology">Neurology</option>
+                  <option value="orthopedics">Orthopedics</option>
+                  <option value="pediatrics">Pediatrics</option>
+                  <option value="dermatology">Dermatology</option>
+                  <option value="dentistry">Dentistry</option>
+                  <option value="gynecology">Gynecology</option>
+                  <option value="general-medicine">General Medicine</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="select-doctor">Select Doctor <span class="req" aria-hidden="true">*</span></label>
+                <select id="select-doctor" name="doctor" required>
+                  <option value="">Choose Doctor</option>
+                  <option value="dr-ananya-mehta">Dr. Ananya Mehta (Cardiology)</option>
+                  <option value="dr-arjun-nair">Dr. Arjun Nair (Neurology)</option>
+                  <option value="dr-meera-iyer">Dr. Meera Iyer (Pediatrics)</option>
+                  <option value="dr-daniel-mensah">Dr. Daniel Mensah (Orthopedics)</option>
+                  <option value="any-specialist">Any Available Specialist</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="preferred-date">Preferred Appointment Date <span class="req" aria-hidden="true">*</span></label>
+                <input type="date" id="preferred-date" name="preferred-date" required>
+              </div>
+
+              <div class="form-field form-field-full">
+                <label for="preferred-time">Preferred Time <span class="req" aria-hidden="true">*</span></label>
+                <select id="preferred-time" name="preferred-time" required>
+                  <option value="">Choose Preferred Time Slot</option>
+                  <option value="09:00">09:00 AM &ndash; 10:00 AM</option>
+                  <option value="10:30">10:30 AM &ndash; 11:30 AM</option>
+                  <option value="12:00">12:00 PM &ndash; 01:00 PM</option>
+                  <option value="14:30">02:30 PM &ndash; 03:30 PM</option>
+                  <option value="16:30">04:30 PM &ndash; 05:30 PM</option>
+                  <option value="18:30">06:30 PM &ndash; 07:30 PM</option>
+                </select>
+              </div>
+
+              <div class="form-field form-field-full">
+                <label for="health-concern">Message or Health Concern <span class="optional">(optional)</span></label>
+                <textarea id="health-concern" name="health-concern" rows="3" placeholder="Briefly share your reason for visiting or any questions..."></textarea>
+              </div>
+
+              <div class="form-field form-field-full form-consent">
+                <input type="checkbox" id="demo-consent" name="demo-consent" required>
+                <label for="demo-consent">I understand this is a front-end student demonstration and does not submit data to a real doctor or reserve an appointment.</label>
+              </div>
+
+              <div class="form-field form-field-full">
+                <button class="btn btn-primary btn-full" type="submit">
+                  Submit Appointment
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+                </button>
+                <p class="form-disclaimer">
+                  <svg class="icon icon-xs" aria-hidden="true" focusable="false"><use href="#icon-shield"></use></svg>
+                  Front-end demonstration only: browser validates inputs, but nothing is saved or sent. In a real medical emergency, dial 108.
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         HEALTH INFORMATION / TIPS SECTION (3 Educational Article Cards)
+         ======================================================================= -->
+    <section class="section health-section" id="health-tips" aria-labelledby="health-heading">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Health Tips &amp; Awareness</p>
+            <h2 id="health-heading">Everyday Habits for a <em>Healthier Life</em></h2>
+          </div>
+          <div class="section-aside">
+            <p>
+              General educational guides to encourage lasting everyday wellness. Always
+              consult a qualified doctor for personal medical advice.
+            </p>
+          </div>
+        </div>
+
+        <div class="health-grid">
+          <!-- Article 1 -->
+          <article class="health-card">
+            <div class="health-media">
+              <img src="https://images.pexels.com/photos/7659573/pexels-photo-7659573.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+                   alt="Healthcare clinician checking a patient's blood pressure during a regular checkup"
+                   width="1200" height="627" loading="lazy">
+              <span class="health-tag">Preventive Care</span>
+            </div>
+            <div class="health-body">
+              <p class="health-meta">General Wellness &middot; 4 min read</p>
+              <h3>Importance of Regular Health Checkups</h3>
+              <p>
+                Routine health checks help monitor blood pressure, cholesterol, and blood
+                sugar early, often catching silent risk factors well before symptoms show.
+              </p>
+              <!-- Pure HTML/CSS expandable read-more area (no JavaScript) -->
+              <details class="read-more">
+                <summary>Read More <span aria-hidden="true">&rarr;</span></summary>
+                <p>
+                  An annual wellness visit helps tailor basic screenings to your age and
+                  family history. Keep copies of older reports, share a list of routine
+                  medicines, and discuss sudden changes in sleep or energy with your physician.
+                </p>
+              </details>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="health-card">
+            <div class="health-media">
+              <img src="https://images.pexels.com/photos/12969052/pexels-photo-12969052.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+                   alt="Fresh colorful garden vegetables representing healthy nutrition choices"
+                   width="1200" height="627" loading="lazy">
+              <span class="health-tag">Nutrition</span>
+            </div>
+            <div class="health-body">
+              <p class="health-meta">Diet &amp; Energy &middot; 4 min read</p>
+              <h3>Healthy Food and Nutrition</h3>
+              <p>
+                Filling your plate with colorful vegetables, seasonal fruits, whole grains,
+                pulses, and adequate water helps sustain immunity, focus, and heart health.
+              </p>
+              <details class="read-more">
+                <summary>Read More <span aria-hidden="true">&rarr;</span></summary>
+                <p>
+                  Aim for home-cooked, balanced meals, keep excess salt and added sugars low,
+                  and favor steady habits over strict fad diets. People managing specific
+                  conditions should check with their doctor or registered dietitian.
+                </p>
+              </details>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="health-card">
+            <div class="health-media">
+              <img src="https://images.pexels.com/photos/5163839/pexels-photo-5163839.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+                   alt="Two people enjoying an outdoor morning jog in a green public park"
+                   width="1200" height="627" loading="lazy">
+              <span class="health-tag">Fitness</span>
+            </div>
+            <div class="health-body">
+              <p class="health-meta">Active Living &middot; 3 min read</p>
+              <h3>Importance of Daily Exercise</h3>
+              <p>
+                Consistent physical movement strengthens the heart, protects joints, lifts
+                mood, and supports restful sleep &mdash; even a brisk daily walk helps.
+              </p>
+              <details class="read-more">
+                <summary>Read More <span aria-hidden="true">&rarr;</span></summary>
+                <p>
+                  Combine moderate aerobic movement like walking or cycling with gentle
+                  stretching and simple strength exercises. Warm up steadily, stay hydrated,
+                  and talk to a physician before starting vigorous routines after long rest.
+                </p>
+              </details>
+            </div>
+          </article>
+        </div>
+
+        <p class="fine-print">Educational content only &mdash; this information is general wellness reading and not a replacement for professional diagnosis or treatment.</p>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         EMERGENCY CONTACT SECTION (Prominent Professional Red Accent Banner)
+         ======================================================================= -->
+    <section class="emergency-section" id="emergency" aria-labelledby="emergency-heading">
+      <div class="container emergency-grid">
+        <div class="emergency-content">
+          <p class="emergency-pill">
+            <span class="pulse-dot pulse-dot-white" aria-hidden="true"></span>
+            24/7 Emergency Services
+          </p>
+          <h2 id="emergency-heading">Need Urgent Care? <span>We Are Available 24/7.</span></h2>
+          <p class="emergency-copy">
+            LifeCare&rsquo;s dedicated emergency team, critical response doctors, and
+            fully staffed ambulance fleet stay ready around the clock. In a genuine
+            medical emergency anywhere in India, dial <strong>108</strong> immediately.
+          </p>
+          <div class="emergency-actions">
+            <a class="btn btn-emergency-white" href="tel:108">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-phone"></use></svg>
+              Emergency Assistance (108)
+            </a>
+            <a class="btn btn-emergency-ghost" href="#contact">Find Emergency Entrance</a>
+          </div>
+        </div>
+
+        <!-- Clear Two-Tier Emergency Contact Cards -->
+        <div class="emergency-cards">
+          <article class="emergency-card-main">
+            <p class="em-label">National Emergency Helpline (India)</p>
+            <a class="em-number" href="tel:108">108</a>
+            <p class="em-desc">24/7 public ambulance dispatch and emergency medical assistance.</p>
+          </article>
+
+          <div class="emergency-cards-row">
+            <article class="emergency-card-sub">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-hospital"></use></svg>
+              <h3>Hospital Emergency Number</h3>
+              <p class="em-sub-num">1800-123-4567</p>
+              <p>Fictional demonstration helpline for 24/7 emergency intake.</p>
+            </article>
+
+            <article class="emergency-card-sub">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-ambulance"></use></svg>
+              <h3>Ambulance Availability</h3>
+              <p class="em-sub-num">24/7 Rapid Dispatch</p>
+              <p>Basic and cardiac-life-support ambulances staffed by paramedics.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+      <p class="container emergency-footnote">
+        Note: 1800-123-4567 is a fictional demonstration number for this academic project. 108 is India&rsquo;s real public emergency helpline.
+      </p>
+    </section>
+
+    <!-- =======================================================================
+         PATIENT TESTIMONIALS SECTION (3 Review Cards with 5-Star Ratings)
+         ======================================================================= -->
+    <section class="section testimonials-section" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Patient Testimonials</p>
+            <h2 id="testimonials-heading">Words From Families <em>We Cared For</em></h2>
+          </div>
+          <div class="rating-summary" aria-label="Average illustrated satisfaction rating 4.9 out of 5">
+            <strong>4.9</strong>
+            <div>
+              <p class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+              <span>Illustrative patient satisfaction</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="testimonial-head">
+              <p class="stars" aria-label="Rated 5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+              <span class="quote-icon" aria-hidden="true">&ldquo;</span>
+            </div>
+            <blockquote>
+              <p>
+                The cardiology doctors explained every test clearly and kept our entire
+                family reassured. The nurses were prompt, polite, and checked in with real
+                kindness all through recovery.
+              </p>
+            </blockquote>
+            <footer class="testimonial-author">
+              <span class="avatar avatar-blue" aria-hidden="true">PS</span>
+              <div>
+                <p class="author-name">Priya Sharma</p>
+                <p class="author-meta">Cardiology Patient&rsquo;s Family</p>
+              </div>
+            </footer>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-head">
+              <p class="stars" aria-label="Rated 5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+              <span class="quote-icon" aria-hidden="true">&ldquo;</span>
+            </div>
+            <blockquote>
+              <p>
+                After a knee injury, my recovery felt smooth from the very first consult.
+                X-ray scheduling, the pharmacy, and physiotherapy exercises were all neatly
+                organized in one calm hospital building.
+              </p>
+            </blockquote>
+            <footer class="testimonial-author">
+              <span class="avatar avatar-green" aria-hidden="true">RV</span>
+              <div>
+                <p class="author-name">Rakesh Verma</p>
+                <p class="author-meta">Orthopedics Care</p>
+              </div>
+            </footer>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-head">
+              <p class="stars" aria-label="Rated 5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+              <span class="quote-icon" aria-hidden="true">&ldquo;</span>
+            </div>
+            <blockquote>
+              <p>
+                Our child usually fears doctor visits, yet the pediatrics staff smiled,
+                spoke gently, and turned the whole appointment into a relaxed experience.
+                Clean rooms and zero rushing.
+              </p>
+            </blockquote>
+            <footer class="testimonial-author">
+              <span class="avatar avatar-deep" aria-hidden="true">SK</span>
+              <div>
+                <p class="author-name">Sunita Kapoor</p>
+                <p class="author-meta">Pediatrics Visit</p>
+              </div>
+            </footer>
+          </article>
+        </div>
+
+        <p class="fine-print">Patient names and testimonials above are fictional samples prepared for this academic project.</p>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         CONTACT & HOSPITAL LOCATION SECTION
+         ======================================================================= -->
+    <section class="section contact-section" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Contact Us</p>
+            <h2 id="contact-heading">Reach Our Hospital <em>Any Time</em></h2>
+          </div>
+          <div class="section-aside">
+            <p>
+              Have questions about departments, outpatient timings, or directions? Our
+              help desk welcomes phone calls and visits daily.
+            </p>
+            <p class="aside-note">All hospital contact details shown are fictional demo records.</p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left Info Grid & Social Links -->
+          <div class="contact-left">
+            <div class="contact-cards">
+              <article class="contact-card">
+                <span class="contact-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-pin"></use></svg></span>
+                <h3>Hospital Address</h3>
+                <address>
+                  LifeCare Multispeciality Hospital<br>
+                  Plot 24, Health City, Sector 12<br>
+                  Dwarka, New Delhi 110075, India
+                </address>
+                <p class="contact-note">Fictional demo address</p>
+              </article>
+
+              <article class="contact-card">
+                <span class="contact-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-phone"></use></svg></span>
+                <h3>Contact Numbers</h3>
+                <a class="contact-strong" href="tel:+911145678900">Reception: +91 11 4567 8900</a>
+                <a class="contact-link" href="tel:18001234567">Emergency (Demo): 1800-123-4567</a>
+                <a class="contact-link" href="tel:108">Emergency Helpline: 108</a>
+                <p class="contact-note">Hospital lines are demo only</p>
+              </article>
+
+              <article class="contact-card">
+                <span class="contact-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-mail"></use></svg></span>
+                <h3>Email Address</h3>
+                <a class="contact-strong" href="mailto:care@lifecarehospital.example">care@lifecarehospital.example</a>
+                <a class="contact-link" href="mailto:appointments@lifecarehospital.example">appointments@lifecarehospital.example</a>
+                <p class="contact-note">Demo .example domain address</p>
+              </article>
+
+              <article class="contact-card">
+                <span class="contact-icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-clock"></use></svg></span>
+                <h3>Working Hours</h3>
+                <ul class="hours-list">
+                  <li><span>OPD (Mon&ndash;Sat)</span><span>8:00 AM &ndash; 8:00 PM</span></li>
+                  <li><span>OPD (Sunday)</span><span>9:00 AM &ndash; 2:00 PM</span></li>
+                  <li><span>Emergency &amp; ICU</span><span>Open 24/7</span></li>
+                  <li><span>Pharmacy</span><span>Open 24/7</span></li>
+                </ul>
+              </article>
+            </div>
+
+            <!-- Social Media Bar -->
+            <div class="social-bar">
+              <div>
+                <p class="meta-label">Connect With LifeCare</p>
+                <div class="social-links">
+                  <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="LifeCare on Facebook">FB</a>
+                  <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="LifeCare on Instagram">IG</a>
+                  <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LifeCare on LinkedIn">IN</a>
+                  <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="LifeCare on YouTube">YT</a>
+                  <a href="https://x.com/" target="_blank" rel="noopener" aria-label="LifeCare on X">X</a>
+                </div>
+              </div>
+              <a class="btn btn-primary btn-sm" href="#appointment">Book Appointment</a>
+            </div>
+          </div>
+
+          <!-- Right Panel: Location Card with Pure-CSS Illustrative Map -->
+          <aside class="location-card" aria-labelledby="location-heading">
+            <div class="map-art" role="img" aria-label="Illustrative map locating LifeCare Hospital near Sector 12 Metro station in Dwarka">
+              <span class="map-road road-h"></span>
+              <span class="map-road road-v"></span>
+              <span class="map-road road-b"></span>
+              <span class="map-park park-a"></span>
+              <span class="map-park park-b"></span>
+              <div class="map-pin">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-pin"></use></svg>
+                <span>LIFECARE</span>
+              </div>
+              <span class="map-tag tag-park">Health City Park</span>
+              <span class="map-tag tag-metro">Sector 12 Metro</span>
+            </div>
+
+            <div class="location-body">
+              <p class="eyebrow eyebrow-light">Hospital Location</p>
+              <h3 id="location-heading">Easy Access &amp; Visitor Parking</h3>
+              <ul class="transit-list">
+                <li>
+                  <svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="#icon-pin"></use></svg>
+                  <span><strong>Metro:</strong> Sector 12 Dwarka Metro station, 8-minute walk.</span>
+                </li>
+                <li>
+                  <svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="#icon-bus"></use></svg>
+                  <span><strong>Public Bus:</strong> Health City stop located 300 m from Main Gate.</span>
+                </li>
+                <li>
+                  <svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="#icon-parking"></use></svg>
+                  <span><strong>Parking:</strong> Basement parking with wheelchair-accessible drop-off bay.</span>
+                </li>
+              </ul>
+              <a class="btn btn-light btn-full" href="https://www.google.com/maps/search/?api=1&amp;query=Dwarka+Sector+12+New+Delhi" target="_blank" rel="noopener">
+                View Area on Google Maps <span aria-hidden="true">&nearr;</span>
+              </a>
+              <p class="location-note">Illustrative campus details for demo only.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       FOOTER (Logo, Description, Quick Links, Departments, Contact, Copyright)
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Brand Summary -->
+      <div class="footer-brand">
+        <a class="brand brand-footer" href="#home" aria-label="Back to LifeCare Home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" focusable="false">
+              <rect x="2" y="2" width="44" height="44" rx="13" fill="currentColor"></rect>
+              <path d="M24 12v24M12 24h24" stroke="#ffffff" stroke-width="5.5" stroke-linecap="round"></path>
+              <path d="M9 31h6l3-6 4 11 4-8 3 3h10" fill="none" stroke="#b6f2d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">LIFECARE</span>
+            <span class="brand-sub">Multispeciality Hospital</span>
+          </span>
+        </a>
+        <p class="footer-desc">
+          Providing quality, compassionate multispeciality healthcare supported by modern
+          technology, dedicated clinicians, and round-the-clock emergency response.
+        </p>
+        <div class="social-links social-links-dark">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#departments">Departments</a></li>
+          <li><a href="#doctors">Doctors</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#health-tips">Health Tips</a></li>
+          <li><a href="#appointment">Book Appointment</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Department Links -->
+      <div class="footer-col">
+        <h2>Departments</h2>
+        <ul>
+          <li><a href="#departments">Cardiology</a></li>
+          <li><a href="#departments">Neurology</a></li>
+          <li><a href="#departments">Orthopedics</a></li>
+          <li><a href="#departments">Pediatrics</a></li>
+          <li><a href="#departments">Dermatology</a></li>
+          <li><a href="#departments">Dentistry</a></li>
+          <li><a href="#departments">Gynecology</a></li>
+          <li><a href="#departments">General Medicine</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Details -->
+      <div class="footer-col footer-contact">
+        <h2>Contact Info</h2>
+        <address>
+          Plot 24, Health City, Sector 12<br>
+          Dwarka, New Delhi 110075
+        </address>
+        <a href="tel:+911145678900">+91 11 4567 8900 (Demo)</a>
+        <a href="tel:18001234567">1800-123-4567 (Demo)</a>
+        <a href="mailto:care@lifecarehospital.example">care@lifecarehospital.example</a>
+        <p class="footer-hours">OPD: Mon&ndash;Sat, 8:00 AM &ndash; 8:00 PM<br>Emergency: Open 24 Hours</p>
+        <a class="footer-em-link" href="tel:108">
+          <svg class="icon icon-xs" aria-hidden="true" focusable="false"><use href="#icon-phone"></use></svg>
+          Emergency Helpline: 108
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 LifeCare Multispeciality Hospital. All rights reserved.</p>
+      <p class="footer-disclaimer">
+        Front-end academic project built strictly with HTML5 &amp; CSS3. Doctors, patient
+        reviews, addresses, and hospital numbers are fictional demonstration data; real
+        appointments are not saved or processed.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
